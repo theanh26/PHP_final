@@ -8,8 +8,8 @@ if (isset($_COOKIE['id_user'])) {
 }
 
 define("IMAGE","../public/img/");
-define("CONETROLLER_USER", "../controllers/user.php");
-define("CONETROLLER_ADMIN", "../controllers/admin.php");
+define("CONTROLLER_USERS", "../controllers/user.php");
+define("CONTROLLER_ADMINS", "../controllers/admin.php");
 define("GET", "../controllers/get.php");
 
 include_once "../models/database.php";
@@ -343,13 +343,13 @@ class handle extends database
             $sql .= " LIMIT $one,$two";
         }
 
+
         $gan = $this->select($sql);
         return $gan;
     }
 }
 $error = array();
 $post = new handle();
-//--------------------------loc------------------------------------
 function phantrang($tongsp, $sp, $page)
 {
 
@@ -363,5 +363,6 @@ function phantrang($tongsp, $sp, $page)
 
     return $mang;
 }
+
 //var_dump($post->loc_sp(0,0,null));
 ?>
