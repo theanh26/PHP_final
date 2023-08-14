@@ -27,14 +27,14 @@ class handle extends database
     }
     public function select_product()
     {
-        $sql = "SELECT * FROM 'products' WHERE 'quatity_pro' > 0 ORDER BY 'date_pro' DESC LIMIT 0,8" ;
+        $sql = "SELECT * FROM `products` WHERE `quatity_pro` > 0 ORDER BY `date_pro` DESC LIMIT 0,8" ;
         $gan = $this->select($sql);
         return $gan;
     }
 
     public function new_product($id)
     {
-        $sql = "SELECT * FROM 'products' WHERE NOT 'id_pro' = $id ORDER BY 'date_pro' DESC LIMIT 0,8" ;
+        $sql = "SELECT * FROM `products` WHERE NOT `id_pro` = $id ORDER BY `date_pro` DESC LIMIT 0,8" ;
         $gan = $this->select($sql);
         return $gan;
     }
