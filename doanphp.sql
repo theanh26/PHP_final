@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 11, 2023 lúc 06:34 PM
+-- Thời gian đã tạo: Th8 14, 2023 lúc 08:16 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -82,9 +82,9 @@ CREATE TABLE `cates` (
 --
 
 INSERT INTO `cates` (`id_cate`, `name_cate`, `parent_cate`) VALUES
-(1, 'Đồ nam', 1),
-(2, 'Đồ nữ', 0),
-(6, 'Đồ khác', 0);
+(1, 'Áo', 1),
+(2, 'Quần', 0),
+(3, 'Đồ khác', 0);
 
 -- --------------------------------------------------------
 
@@ -106,13 +106,6 @@ CREATE TABLE `comments` (
 -- Đang đổ dữ liệu cho bảng `comments`
 --
 
--- INSERT INTO `comments` (`id_cm`, `content_cm`, `product_id`, `user_id`, `date`, `parent_cm`, `hiden_cm`) VALUES
--- (14, 'asdasd', 3, 2, '2021-11-17 01:42:57', 1, 0),
--- (15, 'xin', 3, 2, '2021-11-17 02:00:51', 2, 0),
--- (17, 'lo', 3, 2, '2021-11-17 02:01:11', 1, 0),
--- (30, 'lo', 7, 3, '2021-11-22 17:40:24', 0, 0),
--- (47, '123', 7, 2, '2023-08-05 23:39:41', 30, 0),
--- (48, '123', 7, 2, '2023-08-05 23:40:19', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -130,16 +123,6 @@ CREATE TABLE `history` (
 -- Đang đổ dữ liệu cho bảng `history`
 --
 
--- INSERT INTO `history` (`id_histrory`, `id_user`, `id_order`) VALUES
--- (1, 2, 10),
--- (3, 2, 19),
--- (4, 2, 21),
--- (5, 2, 24),
--- (6, 2, 25),
--- (7, 2, 26),
--- (8, 2, 27),
--- (9, 2, 28),
--- (12, 2, 39);
 
 -- --------------------------------------------------------
 
@@ -147,20 +130,20 @@ CREATE TABLE `history` (
 -- Cấu trúc bảng cho bảng `info`
 --
 
--- CREATE TABLE `info` (
---   `id_info` int(11) NOT NULL,
---   `email_info` varchar(256) NOT NULL,
---   `logo` varchar(256) NOT NULL,
---   `adress_info` varchar(256) NOT NULL,
---   `phone_info` char(10) DEFAULT NULL
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `info` (
+  `id_info` int(11) NOT NULL,
+  `email_info` varchar(256) NOT NULL,
+  `logo` varchar(256) NOT NULL,
+  `adress_info` varchar(256) NOT NULL,
+  `phone_info` char(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `info`
 --
 
--- INSERT INTO `info` (`id_info`, `email_info`, `logo`, `adress_info`, `phone_info`) VALUES
--- (1, 'theanhnb02@gmail.com', 'horizontal_on_white_by_logaster-removebg-preview.png', '79 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội.', '0372163626');
+INSERT INTO `info` (`id_info`, `email_info`, `logo`, `adress_info`, `phone_info`) VALUES
+(1, 'theanhnb02@gmail.com', 'logo.png', '79 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội.', '0372163626');
 
 -- --------------------------------------------------------
 
@@ -178,14 +161,6 @@ CREATE TABLE `loves` (
 -- Đang đổ dữ liệu cho bảng `loves`
 --
 
-INSERT INTO `loves` (`id_love`, `pro_id`, `user_id`) VALUES
-(3, 2, 2),
-(4, 3, 2),
-(5, 4, 2),
-(20, 7, 2),
-(25, 9, 31),
-(26, 38, 3),
-(27, 9, 3);
 
 -- --------------------------------------------------------
 
@@ -209,6 +184,7 @@ CREATE TABLE `orders` (
 -- Đang đổ dữ liệu cho bảng `orders`
 --
 
+
 -- --------------------------------------------------------
 
 --
@@ -226,57 +202,6 @@ CREATE TABLE `order_detail` (
 -- Đang đổ dữ liệu cho bảng `order_detail`
 --
 
--- INSERT INTO `order_detail` (`id_detail`, `quantity_detail`, `order_id`, `product_id`) VALUES
--- (21, 1, 8, 8),
--- (22, 1, 9, 9),
--- (23, 3, 9, 7),
--- (24, 2, 10, 2),
--- (25, 4, 10, 7),
--- (26, 3, 11, 7),
--- (27, 5, 11, 8),
--- (28, 2, 12, 9),
--- (29, 100, 12, 6),
--- (30, 123, 13, 6),
--- (31, 2, 14, 6),
--- (32, 3, 15, 6),
--- (33, 2, 16, 6),
--- (34, 4, 17, 6),
--- (35, 1, 18, 5),
--- (36, 3, 19, 6),
--- (37, 5, 20, 6),
--- (38, 3, 21, 6),
--- (39, 4, 22, 6),
--- (40, 1, 23, 6),
--- (41, 1, 24, 9),
--- (42, 1, 25, 9),
--- (43, 1, 26, 9),
--- (44, 1, 27, 9),
--- (45, 1, 28, 9),
--- (48, 2, 31, 2),
--- (49, 2, 32, 2),
--- (50, 2, 33, 2),
--- (51, 2, 34, 2),
--- (52, 2, 35, 2),
--- (53, 2, 36, 2),
--- (54, 2, 37, 2),
--- (55, 2, 38, 2),
--- (56, 4, 39, 6),
--- (57, 1, 40, 9),
--- (58, 1, 40, 8),
--- (59, 2, 41, 9),
--- (60, 1, 41, 3),
--- (61, 1, 42, 37),
--- (62, 1, 42, 7),
--- (63, 1, 43, 37),
--- (64, 1, 43, 7),
--- (65, 1, 44, 6),
--- (66, 4, 45, 6),
--- (67, 1, 46, 9),
--- (68, 4, 47, 8),
--- (69, 4, 48, 8),
--- (70, 1, 48, 9),
--- (71, 1, 48, 37),
--- (72, 4, 49, 2);
 
 -- --------------------------------------------------------
 
@@ -304,17 +229,16 @@ CREATE TABLE `products` (
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id_pro`, `title_pro`, `content_pro`, `thongtin`, `image_pro`, `quantity_pro`, `price_pro`, `sale_pro`, `date_pro`, `special_pro`, `view_pro`, `hiden_pro`, `cate_id`)
-VALUES
-(2, 'Áo khoác da nam', '<ul><li>Chất liệu: Da tổng hợp cao cấp</li><li>Thiết kế thời trang, năng động</li><li>Màu sắc: Đen</li><li>Phù hợp cho mọi dịp</li></ul>', 'Sản phẩm chất lượng, thời trang và đa dạng về phong cách.', 'ao_khoac_da_nam.jpg', 20, 850000, 0, '2023-08-12 14:30:00', 0, 50, 0, 1),
-(3, 'Quần short nữ', '<ul><li>Chất liệu: Cotton mềm mịn</li><li>Thiết kế trẻ trung, năng động</li><li>Màu sắc: Xanh dương</li><li>Phù hợp cho mùa hè</li></ul>', 'Sản phẩm phù hợp cho những ngày nắng nóng.', 'quan_short_nu.jpg', 30, 350000, 10, '2023-08-12 15:45:00', 1, 70, 0, 2),
-(4, 'Vest nam cổ điển', '<ul><li>Chất liệu: Wool cao cấp</li><li>Thiết kế thanh lịch, tinh tế</li><li>Màu sắc: Xám</li><li>Phù hợp cho các dịp quan trọng</li></ul>', 'Sản phẩm mang lại vẻ đẹp nam tính và lịch lãm.', 'vest_nam_co_dien.jpg', 15, 1200000, 15, '2023-08-12 16:20:00', 0, 90, 0, 1),
-(5, 'Áo sơ mi nữ trắng', '<ul><li>Chất liệu: Chiffon thoáng mát</li><li>Thiết kế trẻ trung, phong cách</li><li>Màu sắc: Trắng</li><li>Phù hợp cho công việc và hẹn hò</li></ul>', 'Sản phẩm giúp tôn lên vẻ đẹp dịu dàng và thanh lịch của phái đẹp.', 'ao_so_mi_nu_trang.jpg', 25, 450000, 0, '2023-08-12 17:15:00', 0, 120, 0, 2),
-(7, 'Quần jogger nam', '<ul><li>Chất liệu: Cotton mềm mịn</li><li>Thiết kế thể thao, thoải mái</li><li>Màu sắc: Xám</li><li>Phù hợp cho các hoạt động ngoài trời</li></ul>', 'Sản phẩm phù hợp cho những ngày cuối tuần thư giãn.', 'quan_jogger_nam.jpg', 40, 400000, 20, '2023-08-12 18:30:00', 1, 60, 0, 3),
-(8, 'Áo len nữ dáng dài', '<ul><li>Chất liệu: Len cao cấp</li><li>Thiết kế ấm áp, thoải mái</li><li>Màu sắc: Hồng</li><li>Phù hợp cho mùa đông</li></ul>', 'Sản phẩm giữ ấm và thời trang cho mùa lạnh.', 'ao_len_nu_dang_dai.jpg', 35, 320000, 10, '2023-08-12 19:40:00', 0, 80, 0, 2),
-(9, 'Quần kaki nam', '<ul><li>Chất liệu: Kaki chất lượng cao</li><li>Thiết kế đơn giản, lịch lãm</li><li>Màu sắc: Nâu</li><li>Phù hợp cho mọi ngày</li></ul>', 'Sản phẩm mang đến vẻ ngoại giao và thời thượng cho nam giới.', 'quan_kaki_nam.jpg', 30, 380000, 15, '2023-08-12 20:25:00', 1, 70, 0, 3),
-(37, 'Áo blouse nữ', '<ul><li>Chất liệu: Vải thun co giãn</li><li>Thiết kế trẻ trung, thời thượng</li><li>Màu sắc: Đỏ</li><li>Phù hợp cho các dịp hàng ngày</li></ul>', 'Sản phẩm giúp tạo nên phong cách nữ tính và hiện đại cho phái đẹp.', 'ao_blouse_nu.jpg', 25, 280000, 0, '2023-08-12 21:15:00', 0, 90, 0, 2),
-(38, 'Quần legging nữ', '<ul><li>Chất liệu: Spandex co giãn</li><li>Thiết kế thể thao, êm ái</li><li>Màu sắc: Đen</li><li>Phù hợp cho tập luyện và hàng ngày</li></ul>', 'Sản phẩm giúp nâng cao sự thoải mái và sự linh hoạt trong mọi hoạt động.', 'quan_legging_nu.jpg', 40, 180000, 20, '2023-08-12 22:10:00', 1, 60,
+INSERT INTO `products` (`id_pro`, `title_pro`, `content_pro`, `thongtin`, `image_pro`, `quantity_pro`, `price_pro`, `sale_pro`, `date_pro`, `special_pro`, `view_pro`, `hiden_pro`, `cate_id`) VALUES
+(1, 'SP350 - Áo Vét Spandex Maxxxx', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-1_x1800.png', 282, 200000, 40, '2021-11-16 15:56:54', 0, 101, 0, 2),
+(2, 'SP350 - Áo Trắng Spandex ', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-3_x1800.png', 230, 200000, 20, '2021-11-16 17:47:36', 0, 35, 0, 2),
+(3, 'SP350 - Áo quần Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-5_x1800.png', 336, 700000, 20, '2021-11-16 17:49:11', 0, 34, 0, 2),
+(4, 'SP350 - Quần Đen Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-7_x1800.png', 1289, 400000, 20, '2021-11-16 17:50:23', 0, 7, 0, 2),
+(5, 'SP350 - Quần dài Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-11_x1800.png', 301, 500000, 10, '2021-11-16 18:37:13', 0, 4, 0, 1),
+(6, 'SP350 - Áo hodie Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-13_x1800.png', 113, 400000, 10, '2021-11-16 18:38:39', 0, 16, 0, 1),
+(7, 'SP350 - Áo hodie Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-15_x1800.png', 279, 300000, 0, '2021-11-16 18:40:04', 0, 35, 0, 1),
+(8, 'SP350 -  Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'OAT_ADULT_SIDE_OUT_x1800.jpg', 997, 1200000, 20, '2021-12-06 17:47:45', 1, 5, 0, 2),
+(9, 'xxx', '<p>xxx</p>', 'xxx', 'Front_e7c54e77-b64d-450b-a7d4-880546c88be4_UPDATEcopy.jpg', 5, 555, 5, '2023-05-24 16:43:37', 0, 12, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -331,19 +255,18 @@ CREATE TABLE `users` (
   `pass` varchar(256) NOT NULL,
   `avatar` varchar(256) NOT NULL,
   `role` int(11) NOT NULL,
-  `look` int(11) NOT NULL DEFAULT 0,
-  `code_mk` varchar(256) NOT NULL DEFAULT '0'
+  `look` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id_user`, `email`, `phone`, `name`, `adress`, `pass`, `avatar`, `role`, `look`, `code_mk`) VALUES
-(2, 'theanhnb02@gmail.com', 24823421, 'Lương Thế Anh', 'Mai Dịch, Cầu Giấy, Hà Nội', '123', 'wallpaper-4k-hinh-nen-4k-bai-cat-ven-bien-dep_101259972.jpg', 1, 0, '5697968'),
-(3, 'theanh123@gmail.com', 964842220, 'Lương Thế Anh', 'Trần Bình, Mai Dịch, Cầu Giấy, Hà Nội', '123', '', 0, 0, '0'),
-(31, 'ngocmeii@gmail.com', 21231231, 'Đinh Thị Mai', 'Dịch Vọng Hậu, Cầu Giấy, Hà Nội', '123', '', 0, 0, '0'),
-(39, 'phungthanh123@gmail.com', 241231232, 'Nguyễn Phùng Thành', 'Mộ Lao, Hà Đông, Hà Nội', '123', '', 0, 0, '0');
+INSERT INTO `users` (`id_user`, `email`, `phone`, `name`, `adress`, `pass`, `avatar`, `role`, `look`) VALUES
+(1, 'theanhnb02@gmail.com', 372163626, 'Lương Thế Anh', 'Mai Dịch, Cầu Giấy, Hà Nội', '123', 'wallpaper-4k-hinh-nen-4k-bai-cat-ven-bien-dep_101259972.jpg', 1, 0),
+(2, 'theanh123@gmail.com', 964842220, 'Lương Thế Anh', 'Trần Bình, Mai Dịch, Cầu Giấy, Hà Nội', '123', '', 0, 0),
+(3, 'ngocmeii@gmail.com', 355222666, 'Đinh Thị Mai', 'Dịch Vọng Hậu, Cầu Giấy, Hà Nội', '123', '', 0, 0),
+(4, 'phungthanh123@gmail.com', 233444555, 'Nguyễn Phùng Thành', 'Mộ Lao, Hà Đông, Hà Nội', '123', '', 0, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -445,7 +368,7 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT cho bảng `cates`
 --
 ALTER TABLE `cates`
-  MODIFY `id_cate` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_cate` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `comments`
