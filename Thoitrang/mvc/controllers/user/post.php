@@ -359,7 +359,6 @@ if (isset($_POST['thanhtoan_donhang'])) {
                 $post->insert_histrory($id_user, $id); //phải tạo mới 1 bảng lưu lịch sử vì dùng giỏ hàng bằng session
             endforeach;
         }
-        $mail1 = $mail->sendMail('Cảm ơn bạn đặt hàng tại shop BBK', $name . ' bạn đặt hàng thành công và chờ xử lý đơn hàng', $email);
         setcookie('error', "<script>alert('Bạn mua hàng thành công');</script>", time() + 48000);
         header("location:" . CONTROLLERS_USER . "?action=card");
     }
