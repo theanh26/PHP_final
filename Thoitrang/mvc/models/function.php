@@ -9,7 +9,7 @@ if (isset($_COOKIE['id_user'])) {
 
 define("IMAGE","../public/img/");
 define("CONTROLLERS_USER", "../controllers/user.php");
-define("CONTROLLERS _ADMIN", "../controllers/admin.php");
+define("CONTROLLERS_ADMIN", "../controllers/admin.php");
 define("GET", "../controllers/get.php");
 
 include_once "../models/database.php";
