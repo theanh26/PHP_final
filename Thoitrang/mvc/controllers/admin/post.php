@@ -22,8 +22,6 @@ if (isset($_POST['sua_dm'])) {
     }
 }
 
-
-
 if (isset($_POST['them_sp'])) {
     $title = $_POST['title'];
     $title = $_POST['title'];

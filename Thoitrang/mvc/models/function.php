@@ -1,4 +1,12 @@
 <?php
+//cookie
+//-------------------------bien luu ca 2 truong hop---------------------------
+if (isset($_COOKIE['id_admin'])) {
+    $id = $_COOKIE['id_admin'];
+}
+if (isset($_COOKIE['id_user'])) {
+    $id = $_COOKIE['id_user'];
+}
 define("IMAGE","../public/img/");
 define("CONETROLLER_USER", "../controllers/user.php");
 define("CONETROLLER_ADMIN", "../controllers/admin.php");
