@@ -336,7 +336,7 @@ class handle extends database
 }
 
 $error = array();
-$post = new xuly();
+$post = new handle();
 
 //--------------------------loc------------------------------------
 function phantrang($tongsp, $sp, $page)
