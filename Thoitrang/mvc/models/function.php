@@ -7,11 +7,14 @@ if (isset($_COOKIE['id_admin'])) {
 if (isset($_COOKIE['id_user'])) {
     $id = $_COOKIE['id_user'];
 }
+
 define("IMAGE","../public/img/");
 define("CONETROLLER_USER", "../controllers/user.php");
 define("CONETROLLER_ADMIN", "../controllers/admin.php");
+define("GET", "../controllers/get.php");
 
 include_once "../models/database.php";
+
 
 class handle extends database
 {
@@ -144,19 +147,19 @@ class handle extends database
         $sql = "UPDATE `users` SET `phone`='$phone',`name`='$name',`adress`='$adress',`avatar`='$avatar' WHERE `id_user` = $id";
         $this->execute($sql);
     }
-    // public function update_ma_code($id, $code)
-    // {
-    //     $sql = "UPDATE `users` SET `code_mk`='$code' WHERE `id_user` = $id";
-    //     $this->execute($sql);
-    // }
-    // public function update_mk($pass, $id, $code_mk = '', $code = '')
-    // {
-    //     $sql = "UPDATE `users` SET `pass`='$pass' WHERE `id_user` = $id";
-    //     if (!empty($code_mk) && !empty($code)) {
-    //         $sql .= " AND `$code_mk` = '$code'";
-    //     }
-    //     $this->execute($sql);
-    // }
+    public function update_ma_code($id, $code)
+    {
+        $sql = "UPDATE `users` SET `code_mk`='$code' WHERE `id_user` = $id";
+        $this->execute($sql);
+    }
+    public function update_mk($pass, $id, $code_mk = '', $code = '')
+    {
+        $sql = "UPDATE `users` SET `pass`='$pass' WHERE `id_user` = $id";
+        if (!empty($code_mk) && !empty($code)) {
+            $sql .= " AND `$code_mk` = '$code'";
+        }
+        $this->execute($sql);
+    }
 
     public function update_nhanvien($email, $phone, $name, $address, $pass, $avatar, $role, $look, $id)
     {
