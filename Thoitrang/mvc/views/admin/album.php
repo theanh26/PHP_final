@@ -1,7 +1,5 @@
 <main>
-
     <h2 class="dash-title">ảnh chi tiết</h2>
-
     <div class="offcanvas offcanvas-end" id="demothem">
         <div class="offcanvas-header">
             <h1 class="offcanvas-title">Thêm ảnh chi tiết</h1>
@@ -52,10 +50,7 @@
             <tbody>
                 <pre>
                 <?php 
-                //var_dump($post->get_val_join('products','cates','products.cate_id','cates.id_cate'));
-                // if(isset($_POST['delete_user'])){
-                //     var_dump($_POST);
-                // }
+                
                 if (!empty($post->get_val('albums'))) {
                     foreach ($post->get_val('albums') as $val) : extract($val); ?>
                         <tr>
@@ -72,7 +67,7 @@
 
         </table>
         <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_album" value="xóa click" id="checkall"></td>
+            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_album" value="Xóa" id="checkall"></td>
         </tr>
         </form>
     </div>

@@ -48,7 +48,7 @@
                     </th>
                     <th>Tiêu đề</th>
                     <th>Ảnh</th>
-                    <th>Ẩn</th>
+                   
                     <th>Sản phẩm</th>
                     <th>Sửa</th>
                 </tr>
@@ -68,7 +68,7 @@
                                 <td><?= $title_banner ?></td>
                                 <td><img src="<?= IMAGE ?><?= $image_banner ?>" width="200px" height="100px" alt=""></td>
                                 <td><?= $id_product ?></td>
-                                <td><?php echo $look_banner = $look_banner < 1 ? "Hiện" : "Ẩn"; ?></td>
+                             
                                 <td><a href="<?= CONTROLLERS_ADMIN ?>?action=sua_bn&id=<?= $id_banner ?>" class="btn btn-warning">Sửa</a></td>
                         </tr>
                 <?php endforeach;
@@ -77,7 +77,7 @@
 
         </table>
         <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_banner" value="xóa click" id="checkall"></td>
+            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_banner" value="Xóa" id="checkall"></td>
         </tr>
         </form>
     </div>

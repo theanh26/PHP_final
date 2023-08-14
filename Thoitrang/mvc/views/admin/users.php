@@ -20,7 +20,6 @@
                     <th>Ảnh</th>
                     <th>Quyền</th>
                     <th>Kích hoạt</th>
-                    <th>Mã</th>
                     <th>Yêu thích</th>
                     <th>Sửa</th>
                 </tr>
@@ -49,7 +48,7 @@
                                         echo "admin";
                                     }  ?></td>
                                 <td><?php echo $look = $look < 1 ? "bình thường" : "bị khóa"; ?></td>
-                                <td><?= $code_mk ?></td>
+                                
                                 <td><a href="<?= CONTROLLERS_ADMIN ?>?action=dsyeuthich&id_user=<?= $id_user ?>" class="btn btn-danger">thích</a></td>
                                 <td><a href="<?= CONTROLLERS_ADMIN ?>?action=sua_user&id_user=<?= $id_user ?>" class="btn btn-warning">Sửa</a></td>
                         </tr>
@@ -59,7 +58,7 @@
 
         </table>
         <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_user" value="xóa click" id="checkall"></td>
+            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_user" value="Xóa" id="checkall"></td>
         </tr>
         </form>
     </div>

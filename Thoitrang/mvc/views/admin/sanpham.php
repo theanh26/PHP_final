@@ -18,12 +18,10 @@
                     <th>Thông tin</th>
                     <th>Ảnh</th>
                     <th>Số lượng</th>
-                    <th>Giá</th>
+                    <th>Giá gốc</th>
                     <th>Sale</th>
                     <th>Ngày thêm</th>
-                    <th>Đặc biệt</th>
                     <th>View</th>
-                    <th>Ẩn</th>
                     <th>Danh mục</th>
                     <th>Sửa</th>
                 </tr>
@@ -51,9 +49,7 @@
                                 <td><?= $price_pro ?></td>
                                 <td><?= $sale_pro ?></td>
                                 <td><?= $date_pro ?></td>
-                                <td><?php echo $special_pro = $special_pro < 1 ? "Đặc biệt" : "Không đặc biệt"; ?></td>
                                 <td><?= $view_pro ?></td>
-                                <td><?php echo $hiden_pro = $hiden_pro < 1 ? "Hiện" : "Ẩn"; ?></td>
                                 <td><?= $name_cate ?></td>
                                 <td><a href="<?= CONTROLLERS_ADMIN ?>?action=sua_sp&id=<?= $id_pro ?>" class="btn btn-warning">Sửa</a></td>
                         </tr>
@@ -63,7 +59,7 @@
             </tbody>
 
         </table>
-        <ul class="pagination mt-5">
+        <ul class="pagination mt-5" style="display: flex; justify-content: end">
                       
                       <li class="page-item"><a class="page-link" href="">Trang đầu</a></li>
                       <?php for ($sum = 1; $sum <= $mang['tong_page']; $sum++) : ?>
@@ -77,7 +73,7 @@
                       <li class="page-item"><a class="page-link" href="#">Trang cuối</a></li>
         </ul>
         <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_pro" value="xóa click" id="checkall"></td>
+            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_pro" value="Xóa" id="checkall"></td>
         </tr>
         </form>
     </div>
