@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 14, 2023 lúc 08:16 AM
+-- Thời gian đã tạo: Th8 14, 2023 lúc 05:43 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Phiên bản PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -106,6 +106,13 @@ CREATE TABLE `comments` (
 -- Đang đổ dữ liệu cho bảng `comments`
 --
 
+INSERT INTO `comments` (`id_cm`, `content_cm`, `product_id`, `user_id`, `date`, `parent_cm`, `hiden_cm`) VALUES
+(14, 'asdasd', 3, 2, '2021-11-17 01:42:57', 1, 0),
+(15, 'xin', 3, 2, '2021-11-17 02:00:51', 2, 0),
+(17, 'lo', 3, 2, '2021-11-17 02:01:11', 1, 0),
+(30, 'lo', 7, 3, '2021-11-22 17:40:24', 0, 0),
+(47, '123', 7, 2, '2023-08-05 23:39:41', 30, 0),
+(48, '123', 7, 2, '2023-08-05 23:40:19', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -123,6 +130,9 @@ CREATE TABLE `history` (
 -- Đang đổ dữ liệu cho bảng `history`
 --
 
+INSERT INTO `history` (`id_histrory`, `id_user`, `id_order`) VALUES
+(3, 2, 19),
+(4, 2, 21);
 
 -- --------------------------------------------------------
 
@@ -161,6 +171,14 @@ CREATE TABLE `loves` (
 -- Đang đổ dữ liệu cho bảng `loves`
 --
 
+INSERT INTO `loves` (`id_love`, `pro_id`, `user_id`) VALUES
+(3, 2, 2),
+(4, 3, 2),
+(5, 4, 2),
+(20, 7, 2),
+(25, 9, 4),
+(26, 38, 3),
+(27, 9, 3);
 
 -- --------------------------------------------------------
 
@@ -184,6 +202,17 @@ CREATE TABLE `orders` (
 -- Đang đổ dữ liệu cho bảng `orders`
 --
 
+INSERT INTO `orders` (`id_order`, `total_order`, `phone_order`, `email_order`, `adress_order`, `name_order`, `content_order`, `date_order`, `action`) VALUES
+(11, 3150000, 213123, '123123@sdfa', 'hhi', 'alllo', '1231', '2021-11-22 17:38:46', 3),
+(12, 20600000, 12314212, 'ko@gmail.com', 'ko', 'ko', '12312312', '2021-11-22 23:07:31', 3),
+(16, 400000, 123, '123@qweq', '123', '323', '123', '2021-11-24 15:01:44', 0),
+(17, 800000, 12312, 'qie@gmai', 'qưe', 'qưeqw', 'qe', '2021-11-24 15:19:07', 0),
+(18, 320000, 123, '123@gmail', '123', '3123', '123123', '2021-11-24 15:27:02', 0),
+(19, 600000, 123, '123@gmail', '123', 'bachchu', '123', '2021-11-24 17:42:30', 1),
+(21, 600000, 123, '123@dfsd', '123', 'bách chu', '123', '2021-11-28 17:26:19', 2),
+(46, 300000, 2147483647, 'xx@gmail.com', 'xxx', 'xxx', 'dfsgdfgdfg', '2023-05-24 16:33:49', 2),
+(47, 1440000, 987654321, 'user@gmail.com', 'xxxx', 'xxxx', 'jio', '2023-05-24 16:35:26', 2),
+(48, 2700000, 987654322, 'demo@gmail.com', 'hcm', 'demo', 'giao gio hanh chinh', '2023-05-24 16:55:01', 1);
 
 -- --------------------------------------------------------
 
@@ -202,6 +231,21 @@ CREATE TABLE `order_detail` (
 -- Đang đổ dữ liệu cho bảng `order_detail`
 --
 
+INSERT INTO `order_detail` (`id_detail`, `quantity_detail`, `order_id`, `product_id`) VALUES
+(26, 3, 11, 7),
+(27, 5, 11, 8),
+(28, 2, 12, 9),
+(29, 100, 12, 6),
+(33, 2, 16, 6),
+(34, 4, 17, 6),
+(35, 1, 18, 5),
+(36, 3, 19, 6),
+(38, 3, 21, 6),
+(67, 1, 46, 9),
+(68, 4, 47, 8),
+(69, 4, 48, 8),
+(70, 1, 48, 9),
+(71, 1, 48, 37);
 
 -- --------------------------------------------------------
 
@@ -230,15 +274,15 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_pro`, `title_pro`, `content_pro`, `thongtin`, `image_pro`, `quantity_pro`, `price_pro`, `sale_pro`, `date_pro`, `special_pro`, `view_pro`, `hiden_pro`, `cate_id`) VALUES
-(1, 'SP350 - Áo Vét Spandex Maxxxx', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-1_x1800.png', 282, 200000, 40, '2021-11-16 15:56:54', 0, 101, 0, 2),
-(2, 'SP350 - Áo Trắng Spandex ', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-3_x1800.png', 230, 200000, 20, '2021-11-16 17:47:36', 0, 35, 0, 2),
-(3, 'SP350 - Áo quần Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-5_x1800.png', 336, 700000, 20, '2021-11-16 17:49:11', 0, 34, 0, 2),
-(4, 'SP350 - Quần Đen Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-7_x1800.png', 1289, 400000, 20, '2021-11-16 17:50:23', 0, 7, 0, 2),
-(5, 'SP350 - Quần dài Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-11_x1800.png', 301, 500000, 10, '2021-11-16 18:37:13', 0, 4, 0, 1),
-(6, 'SP350 - Áo hodie Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-13_x1800.png', 113, 400000, 10, '2021-11-16 18:38:39', 0, 16, 0, 1),
-(7, 'SP350 - Áo hodie Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-15_x1800.png', 279, 300000, 0, '2021-11-16 18:40:04', 0, 35, 0, 1),
-(8, 'SP350 -  Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'OAT_ADULT_SIDE_OUT_x1800.jpg', 997, 1200000, 20, '2021-12-06 17:47:45', 1, 5, 0, 2),
-(9, 'xxx', '<p>xxx</p>', 'xxx', 'Front_e7c54e77-b64d-450b-a7d4-880546c88be4_UPDATEcopy.jpg', 5, 555, 5, '2023-05-24 16:43:37', 0, 12, 0, 2);
+(2, 'SP350 - Áo Vét Spandex Maxxxx', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-1_x1800.png', 282, 200000, 40, '2021-11-16 15:56:54', 0, 101, 0, 2),
+(3, 'SP350 - Áo Trắng Spandex ', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-3_x1800.png', 230, 200000, 20, '2021-11-16 17:47:36', 0, 35, 0, 2),
+(4, 'SP350 - Áo quần Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-5_x1800.png', 336, 700000, 20, '2021-11-16 17:49:11', 0, 34, 0, 2),
+(5, 'SP350 - Quần Đen Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-7_x1800.png', 1289, 400000, 20, '2021-11-16 17:50:23', 0, 7, 0, 2),
+(7, 'SP350 - Quần dài Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-11_x1800.png', 301, 500000, 10, '2021-11-16 18:37:13', 0, 4, 0, 1),
+(8, 'SP350 - Áo hodie Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-13_x1800.png', 113, 400000, 10, '2021-11-16 18:38:39', 0, 16, 0, 1),
+(9, 'SP350 - Áo hodie Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'UNIONESSENTIALS-15_x1800.png', 279, 300000, 0, '2021-11-16 18:40:04', 0, 35, 0, 1),
+(37, 'SP350 -  Spandex Max', '<ul><li>Chất vải: Linen mềm mịn, siêu mát, thấm hút mồ hôi nhanh</li><li>Form chuẩn, thoải mái</li><li>Mang lại vẻ đẹp sang trọng, tinh tế</li><li>Có thể mặc đi chơi, đi du lịch, dạo phố,...</li><li>Hình ảnh chân thật, sản phẩm đúng như mô tả</li><li>Đường may rất tỉ&nbsp;mỉ, chắc chắn.</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'OAT_ADULT_SIDE_OUT_x1800.jpg', 997, 1200000, 20, '2021-12-06 17:47:45', 1, 5, 0, 2),
+(38, 'xxx', '<p>xxx</p>', 'xxx', 'Front_e7c54e77-b64d-450b-a7d4-880546c88be4_UPDATEcopy.jpg', 5, 555, 5, '2023-05-24 16:43:37', 0, 12, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -263,10 +307,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `email`, `phone`, `name`, `adress`, `pass`, `avatar`, `role`, `look`) VALUES
-(1, 'theanhnb02@gmail.com', 372163626, 'Lương Thế Anh', 'Mai Dịch, Cầu Giấy, Hà Nội', '123', 'wallpaper-4k-hinh-nen-4k-bai-cat-ven-bien-dep_101259972.jpg', 1, 0),
-(2, 'theanh123@gmail.com', 964842220, 'Lương Thế Anh', 'Trần Bình, Mai Dịch, Cầu Giấy, Hà Nội', '123', '', 0, 0),
-(3, 'ngocmeii@gmail.com', 355222666, 'Đinh Thị Mai', 'Dịch Vọng Hậu, Cầu Giấy, Hà Nội', '123', '', 0, 0),
-(4, 'phungthanh123@gmail.com', 233444555, 'Nguyễn Phùng Thành', 'Mộ Lao, Hà Đông, Hà Nội', '123', '', 0, 0);
+(2, 'theanhnb02@gmail.com', 372163626, 'Lương Thế Anh', 'Mai Dịch, Cầu Giấy, Hà Nội', '123', 'wallpaper-4k-hinh-nen-4k-bai-cat-ven-bien-dep_101259972.jpg', 1, 0),
+(3, 'theanh123@gmail.com', 964842220, 'Lương Thế Anh', 'Trần Bình, Mai Dịch, Cầu Giấy, Hà Nội', '123', '', 0, 0),
+(4, 'ngocmeii@gmail.com', 355222666, 'Đinh Thị Mai', 'Dịch Vọng Hậu, Cầu Giấy, Hà Nội', '123', '', 0, 0),
+(5, 'phungthanh123@gmail.com', 233444555, 'Nguyễn Phùng Thành', 'Mộ Lao, Hà Đông, Hà Nội', '123', '', 0, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
