@@ -158,29 +158,6 @@ if (isset($_POST['tim_sp'])) {
     $save = $post->loc_sp(0, 0, '', '', $mang['start'], $mang['sp']);
 }
 
-if (isset($_POST['them_new'])) {
-    $image = $_FILES['image']['name'];
-    $tmp = $_FILES['image']['tmp_name'];
-    move_uploaded_file($tmp, IMAGE . $image);
-    $post->insert_news($_POST['title'], $_POST['content'], $image, $_POST['nguoi_viet']);
-}
-
-if (isset($_POST['sua_new'])) {
-    if (empty($_FILES['image']['name'])) {
-        foreach ($post->get_val_id('news', 'id_news', $_GET['id_new']) as $giu) {
-            $user = $_POST['title'];
-            $_FILES['image']['name'] = $giu['image'];
-            $post->update_news($_GET['id_new'], $_POST['title'], $_POST['content'], $_FILES['image']['name'], $_POST['nguoi_viet']);
-        }
-    } else {
-        $user =  $_POST['name'];
-        $image = $_FILES['image']['name'];
-        $tmp = $_FILES['image']['tmp_name'];
-        move_uploaded_file($tmp, IMAGE . $image);
-    $post->insert_news($_POST['title'], $_POST['content'], $image, $_POST['nguoi_viet']);
-    }
-}
-
 if (!empty($post->thongke_buy_pro())) {
     $sp = 0;
     $tong1 = 0;

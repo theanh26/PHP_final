@@ -198,12 +198,12 @@
                                                 <h5>
                                                     <?= $name ?>
                                                 </h5>
-                                                <h5 class='text-danger'> (admin) </h5>
+                                                <h5 class='text-danger'><?php echo $role = $role > 0 ? "(admin)" : ""; ?> </h5>
                                                 <span class="fs-6 mx-2 d-flex "><i class="far fa-calendar-alt text-success fs-5 mx-2"></i> <?= $date ?></span>
                                             </div>
                                             <div class="">
                                                 <div class="media-body mt-3 card p-2">
-                                                    <p class="fs-4">Nội dung</p>
+                
                                                     <p>
                                                         <?= htmlspecialchars($content_cm) ?>
                                                     </p>

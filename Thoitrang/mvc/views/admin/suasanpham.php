@@ -53,7 +53,7 @@
                     <?php endforeach; ?>
                 </select>
             </div>
-
+            
             <?php foreach($post->get_val_id('attributes','pro_id',$_GET['id']) as $val2): extract($val2);?>
             <div class="card my-3 d-flex flex-row">
                 <input class="form-control" type="color" name="color_up[]" placeholder="Nhập màu" value="<?=$color?>" disabled>
