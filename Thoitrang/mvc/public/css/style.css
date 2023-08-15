@@ -13,11 +13,11 @@
     text-decoration: none;
     list-style-type: none;
     box-sizing: border-box;
+
 }
 .table>:not(caption)>*>* {
     background-color: #fff !important;
 }
-
 .table-responsive td{
     color: black !important;
 }
@@ -29,12 +29,13 @@ a{
 }
 .table th{
     color: black !important;
+    /* border: #000 1px; */
 }
 #sidebar-toggle {
     display: none;
 }
 .main{
-    background-color: #d5e9fd !important;
+    background-color: #e2eaf1 !important;
 
 }
 .sidebar {
@@ -79,7 +80,7 @@ a{
     margin-top: 10px;
 }
 .sidebar li {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .sidebar a {
@@ -201,14 +202,14 @@ main {
     padding-right: 1.4rem;
 }
 
-.card-body h5 {
-    color: var(--text-grey);
-    font-size: 1rem;
+.card-body h3 {
+    color: var(--color-dark);
+    font-size: 1.2rem;
 }
 
-.card-body h4 {
-    color: var(--color-dark);
-    font-size: 1.1rem;
+.card-body h5 {
+    color: #373c49;
+    font-size: 1rem;
     margin-top: .2rem;
 }
 
@@ -240,7 +241,7 @@ main {
 }
 
 .activity-card h3 {
-    color: var(--text-grey);
+    color: var(--main-color);
     margin: 1rem;
 }
 
@@ -365,7 +366,7 @@ tbody tr:nth-child(even) {
     overflow-x: auto;
 }
 .them{
-    background-color: #9f12f1 !important;
+    background-color: var(--main-color) !important;
     color: white;
 }
 
@@ -481,4 +482,3 @@ tbody tr:nth-child(even) {
     }
     
 }
-
