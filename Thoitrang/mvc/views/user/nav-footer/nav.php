@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <title>BBK</title>
+    <title>Betoni</title>
     <script src="https://kit.fontawesome.com/e123c1a84c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <!-- bootstrap -->
@@ -14,6 +14,10 @@
     <!-- swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../public/css/web.css">
+    <!-- font logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,700&family=Satisfy&display=swap" rel="stylesheet">
 
 </head>
 
@@ -85,7 +89,7 @@
                 <div class="container-fluid ">
                     <a class="navbar-brand" href="#">
                         <div class="nav__logo">
-                            <a href="<?= CONTROLLERS_USER ?>"><img src="<?= IMAGE ?><?= $logo?>" alt="" height="100px"></a>
+                            <a href="<?= CONTROLLERS_USER ?>"><img src="<?= IMAGE ?><?= $logo?>" alt="" style="height: 50px; width: auto; margin-bottom: 10px; margin-right:20px"></a>
                         </div>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -94,16 +98,16 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" style="padding-right: 25px;" href="<?= CONTROLLERS_USER ?>">Trang chủ</a>
+                                <a class="nav-link" style="padding-right: 25px; font-weight: 700" href="<?= CONTROLLERS_USER ?>">TRANG CHỦ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="padding-right: 25px;" href="<?= CONTROLLERS_USER ?>?action=danhmuc">Danh mục</a>
+                                <a class="nav-link" style="padding-right: 25px; font-weight: 700" href="<?= CONTROLLERS_USER ?>?action=danhmuc">DANH MỤC</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="padding-right: 25px;" href="<?= CONTROLLERS_USER ?>?action=contact">Liên hệ</a>
+                                <a class="nav-link" style="padding-right: 25px; font-weight: 700" href="<?= CONTROLLERS_USER ?>?action=contact">LIÊN HỆ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="padding-right: 25px;" href="<?= CONTROLLERS_USER ?>?action=gioithieu">Về chúng tôi</a>
+                                <a class="nav-link" style="padding-right: 25px; font-weight: 700" href="<?= CONTROLLERS_USER ?>?action=gioithieu">VỀ CHÚNG TÔI</a>
                             </li>
                         </ul>
                         <div class="nav__right d-flex justify-content-around ">

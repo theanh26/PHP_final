@@ -161,21 +161,6 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <a href="" data-bs-toggle="collapse" data-bs-target="#demo8">
-                        <span class="ti-image"></span>
-                        <span>Album</span>
-                    </a>
-                    <div id="demo8" class="collapse">
-                        <ul class="container mt-3 nav-bar-b">
-                            <li>
-                                <a href="<?= CONTROLLERS_ADMIN ?>?action=dsalbum">
-                                    <span class="text-black">danh sách album</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
                 </ul>
         </div>
     </div>

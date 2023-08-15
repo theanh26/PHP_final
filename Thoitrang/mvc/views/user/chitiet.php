@@ -26,16 +26,7 @@
                                 <img src="<?= IMAGE ?><?= $image_pro ?>" id="myimage" class="img-fluid z-depth-1">
                             </div>
 
-                            <div class="share mb-2 mt-3">
-                        <span class="border-bottom fs-4 text-danger"> Chính sách </span>
-                        <div class="tt_sp_chitiet d-flex flex-column mt-3">
-                        <?php foreach (explode(',', $thongtin) as $val) { ?>
-                                <p><span> <?= $val ?></span></p>
-                            <?php }
-                            ?>
-                        </div>
-
-                    </div>
+                          
                         </div>
                     </div>
 
@@ -102,20 +93,9 @@
 
                     </div>
 
-                    <!-- <div class="share mb-2 mt-3">
-                        <span class="border-bottom fs-4 text-danger"> Thông tin sản phẩm </span>
-                        <div class="tt_sp_chitiet d-flex flex-column mt-3">
-                            <?php foreach (explode(',', $thongtin) as $val) { ?>
-                                <p><strong><i class="ti-minus"></i><span> <?= $val ?></span></strong></p>
-                            <?php }
-                            ?>
-                        </div>
-
-                    </div> -->
-
                     <div class="mt-3 mb-5">
                         <span class="border-bottom fs-4 text-danger">
-                            Nội dung sản phẩm
+                            Mô tả sản phẩm
                         </span>
                         <div class="tt_sp_chitiet d-flex flex-column mt-3">
                             <ul style="padding-left: 0"></ul><span >
@@ -177,7 +157,6 @@
                                     <span class="fs-6 mx-2 d-flex "><i class="far fa-calendar-alt text-success fs-5 mx-2"></i> <?= $date ?></span>
                                 </div>
                                 <div class="mt-3 card p-2 media-body">
-                                    <p class="fs-4">Nội dung</p>
                                     <p>
                                         <?= htmlspecialchars($content_cm) ?>
                                     </p>
@@ -256,71 +235,71 @@
                 </a>
             </div>
             <div class="mt-3">
-                <div class="swiper mySwiper2">
-                    <div class="swiper-wrapper">
-                        <?php foreach ($post->new_product($_GET['id_chitiet']) as $val) : extract($val) ?>
-                            <div class="swiper-slide">
+        <div class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+                <?php foreach ($post->select_product() as $val) : extract($val);
+                    if ($special_pro < 1) { ?>
+                        <div class="swiper-slide">
 
-                                <div class=" p-3 card">
-                                    <div class="card__tt">
-                                        <div class="card__tt-image">
-                                            <img src="<?= IMAGE ?><?= $image_pro ?>" alt="">
-                                            <div class="sp__hover d-flex  justify-content-around align-items-center container">
-                                                <div class="sp__hover--button">
-                                                    <strong><a href="<?= CONTROLLERS_USER ?>?action=chitiet&id_chitiet=<?= $id_pro ?>">Chi tiết</a></strong>
-                                                </div>
-                                                <div class="icon">
-                                                    <ul class="d-flex">
-                                                        <li><a href="<?= CONTROLLERS_USER ?>?action=like&id_like=<?= $id_pro ?>"><i class="far fa-heart"></i></a></li>
-                                                        <li><a href=""><i class="far fa-share-square"></i></a></li>
-                                                    </ul>
-                                                </div>
+                            <div class=" p-3 card">
+                                <div class="card__tt">
+                                    <div class="card__tt-image">
+                                        <img src="<?= IMAGE ?><?= $image_pro ?>" alt="">
+                                        <div class="sp__hover d-flex  justify-content-around align-items-center container">
+                                            <div class="sp__hover--button">
+                                                <strong><a href="<?= GET ?>?id_chitiet=<?= $id_pro ?>">Chi tiết</a></strong>
+                                            </div>
+                                            <div class="icon">
+                                                <ul class="d-flex">
+                                                    <li><a href="<?= CONTROLLERS_USER ?>?action=like&id_like=<?= $id_pro ?>"><i class="far fa-heart"></i></a></li>
+                                                    <li><a href="<?= CONTROLLERS_USER ?>?action=add_to_cart&id_chitiet=<?= $id_pro ?>"><i class="fab fa-shopify"></i></a></li>   
                                             </div>
                                         </div>
-                                        <div class="stdio">
-                                            <span>BACH CHU DESIGN</span>
+                                    </div>
+                                    
+                                    <div class="ten_sp" style="margin-top: 15px;";>
+                                        <strong><?= $title_pro ?></strong>
+                                    </div>
+                                    
+                                    <div class="gia_sp d-flex" style="margin-top: 15px;";>
+                                        <div class="tt_gia_tien" style="margin-right: 5px";>
+                                            <i class="fas fa-tags"></i>
                                         </div>
-                                        <div class="ten_sp">
-                                            <strong><?= $title_pro ?></strong>
+                                        <div class="gia_goc" style="color: #ccc;">
+                                            <del><span><?= $price_pro ?></span></del>
                                         </div>
-                                        <div class="ten_sp">
-                                            <span class="text-dark">Số lượng sản phẩm: </span><?= $quantity_pro ?>
+                                        <div class="gach_sp mx-2" ;></div>
+                                        <div class="gia_duocgiam";>
+                                            <span><?php echo number_format($sale_chinh = $price_pro - $price_pro * ($sale_pro / 100)); ?></span>
                                         </div>
-                                        <div class="gia_sp d-flex">
-                                            <div class="tt_gia_tien">
-                                                <i class="fas fa-tags"></i>
-                                            </div>
-                                            <div class="gia_goc">
-                                                <del><span><?= $price_pro ?></span></del>
-                                            </div>
-                                            <div class="gach_sp mx-2"></div>
-                                            <div class="gia_duocgiam">
-                                                <span><?php echo number_format($sale_chinh = $price_pro - $price_pro * ($sale_pro / 100)); ?></span>
-                                            </div>
-                                            <div class="gach"></div>
-                                            <div class="sale_sp">
-                                                <span>
-                                                    <?= $sale_pro ?>%
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="new">
+                                        <div class="gach"></div>
+                                        <div class="sale_sp" style="margin-left: 80px";>
                                             <span>
-                                                new
+                                                <?= $sale_pro ?>%
                                             </span>
                                         </div>
-
                                     </div>
-                                </div>
+                                    <div class="ten_sp" style=" font-size:13px; margin-top: 15px;">
+                                        <span class="text-dark" style="color:rgb(83, 159, 192) !important">Mua 2 được giảm thêm 10%</span>
+                                    </div>
+                                    <div class="new">
+                                        <span>
+                                            new
+                                        </span>
+                                    </div>
 
+                                </div>
                             </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
+
+                        </div>
+                <?php }
+                endforeach; ?>
             </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            
+        </div>
+    </div>
         </div>
 
     </main>

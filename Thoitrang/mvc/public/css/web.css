@@ -13,6 +13,9 @@
     padding: 0;
 }
 
+.ol, ul {
+    padding-left: 0px !important;
+}
 
 /* ------------------------------header ---------------------*/
 .top_nav_tt{
@@ -132,12 +135,19 @@ nav{
 .nav__right span:hover{
     color: white !important;
 }
-.nav__right,
-.navbar-collapse {
+.nav__right
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    width: 20%;
+}
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 38px 10px 10px;
     width: 20%;
 }
 .collapse a:hover{
@@ -309,6 +319,7 @@ nav{
 }
 .btn-primary{
     background-color: var(--input-thanh);
+    border: none;
 }
 .tt_gia_tien{
     color: var(--input-thanh);
@@ -427,6 +438,9 @@ nav{
     width: 150px;
     height: 50px;
     border-radius: 40px;
+}
+.m-md-3 {
+    margin: 1.2rem 1rem 0rem 0rem !important;
 }
 .tieude-main{
     background-color: var(--input-thanh);
@@ -605,49 +619,4 @@ footer span,footer h6{
     position: fixed;
     bottom: 2%;
     right: 2%;
-}
-
-/*--------------------------new-------------------------------*/
-.new_font h4{
-    font-size: 15px;
-}
-.new_font a{
-    font-size: 13px;
-}
-.news .font_new{
-    color: #E14B33;
-}
-.news .font_new a{
-    color: black;
-}
-@media screen and (max-width:900px){
-    .nav__right{
-        display: flex;
-        flex-direction: column;
-    }
-    .commment_so{
-        display: grid !important;
-        grid-template-columns: 1fr;
-    }
-    .sp__hover--button strong a{
-        font-size: 10px;
-    }
-    .list_like,.list{
-        overflow: scroll;
-    }
-    .list_like_table,.list_card{
-        width: 1200px;
-    }
-    .tieude-main{
-        width: 100% !important;
-    }
-    .add_to_card{
-        margin-top: 10px;
-    }
-    .sp__hover{
-        padding: 0;
-    }
-    .sp__hover--button{
-        margin-left: 5px;
-    }
 }
