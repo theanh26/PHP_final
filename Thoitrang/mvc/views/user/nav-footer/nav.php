@@ -98,16 +98,16 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" style="padding-right: 25px; font-weight: 700" href="<?= CONTROLLERS_USER ?>">TRANG CHỦ</a>
+                                <a class="nav-link" style="padding-right: 25px; font-weight: 700; font-size:15px" href="<?= CONTROLLERS_USER ?>">TRANG CHỦ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="padding-right: 25px; font-weight: 700" href="<?= CONTROLLERS_USER ?>?action=danhmuc">DANH MỤC</a>
+                                <a class="nav-link" style="padding-right: 25px; font-weight: 700; font-size:15px" href="<?= CONTROLLERS_USER ?>?action=danhmuc">DANH MỤC</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="padding-right: 25px; font-weight: 700" href="<?= CONTROLLERS_USER ?>?action=contact">LIÊN HỆ</a>
+                                <a class="nav-link" style="padding-right: 25px; font-weight: 700; font-size:15px" href="<?= CONTROLLERS_USER ?>?action=contact">LIÊN HỆ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" style="padding-right: 25px; font-weight: 700" href="<?= CONTROLLERS_USER ?>?action=gioithieu">VỀ CHÚNG TÔI</a>
+                                <a class="nav-link" style="padding-right: 25px; font-weight: 700; font-size:15px" href="<?= CONTROLLERS_USER ?>?action=gioithieu">VỀ CHÚNG TÔI</a>
                             </li>
                         </ul>
                         <div class="nav__right d-flex justify-content-around ">

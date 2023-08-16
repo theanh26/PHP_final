@@ -59,18 +59,17 @@ if (isset($_POST['sua_sp'])) {
     $quantity = $_POST['quantity'];
     $price = $_POST['price'];
     $sale = $_POST['sale'];
-    $special = $_POST['special'];
-    $hiden = $_POST['hiden'];
+  
     $cate_id = $_POST['cate_id'];
 
     if (empty($image)) {
         foreach ($post->get_val_id('products', 'id_pro', $_GET['id']) as $val) {
             extract($val);
-            $post->update_product('id_pro', $_GET['id'], $title, $content, $thongtin2, $image_pro, $quantity, $price, $sale, $special, $hiden, $cate_id);
+            $post->update_product('id_pro', $_GET['id'], $title, $content, $thongtin2, $image_pro, $quantity, $price, $sale, $special, $hiden_pro, $cate_id);
         }
     } else {
         move_uploaded_file($image_tmp, IMAGE . $image);
-        $post->update_product('id_pro', $_GET['id'], $title, $content, $thongtin2, $image, $quantity, $price, $sale, $special, $hiden, $cate_id);
+        $post->update_product('id_pro', $_GET['id'], $title, $content, $thongtin2, $image, $quantity, $price, $sale, $special, $hiden_pro, $cate_id);
     }
     $error['one'] = "<script>alert('Bạn sửa thành công');</script>";
 }

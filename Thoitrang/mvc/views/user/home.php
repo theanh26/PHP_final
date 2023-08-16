@@ -39,7 +39,7 @@
 <div class="container">
     <div class="tieude-main p-3 mt-3 container">
         <a href="">
-            <span class="text-white"><i class="fab fa-shopify"></i> Sản phẩm đặc biệt</span>
+            <span class="text-white" style="font-weight: 700"><i class="fab fa-shopify"></i> SẢN PHẨM ĐẶC BIỆT</span>
         </a>
     </div>
     <div class="mt-3">
@@ -121,7 +121,7 @@
 </center>
 <div class="tieude-main p-3 mt-5 container">
     <a href="">
-        <span class="text-white"><i class="fab fa-shopify"></i> Sản phẩm mới nhất </span>
+        <span class="text-white" style="font-weight: 700"><i class="fab fa-shopify"></i> SẢN PHẨM MỚI NHẤT</span>
     </a>
 </div>
 <main class="main__one container-xl">
@@ -190,6 +190,35 @@
             </a>
         </div>
     </center>
+</main>
+<main>
+<div class="img_main" style="margin-top: 50px">
+    <?php 
+    $imageDisplayed = false; 
+
+    foreach ($post->get_val('img_main') as $key => $val) {
+        if (!$imageDisplayed) {
+            extract($val);
+            echo '<img src="' . IMAGE . 'main2.jpeg" alt="" class="d-block image_banner" style="width:100%">';
+            $imageDisplayed = true; 
+        }
+    }
+    ?>
+</div>
+<div class="img_main1" style="margin-top: 20px">
+    <?php 
+    $imageDisplayed = false; 
+
+    foreach ($post->get_val('img_main') as $key => $val) {
+        if (!$imageDisplayed) {
+            extract($val);
+            echo '<img src="' . IMAGE . 'main1.jpeg" alt="" class="d-block image_banner" style="width:100%">';
+            $imageDisplayed = true; 
+        }
+    }
+    ?>
+</div>
+
 </main>
 
 </div>

@@ -29,7 +29,7 @@
                 <input class="form-control" type="number" name="sale" placeholder="Nhập sale" value="<?= $sale_pro ?>">
             </div>
 
-            <div class=" card my-3 ">
+            <!-- <div class=" card my-3 ">
                 <select class="form-control" name="special" id="">
                     <option value="<?= $special ?>" selected><?php echo $special_pro = $special_pro < 1 ? "đặc biệt" : "không đặc biệt"; ?></option>
                     <option value="0">Đặc biệt</option>
@@ -43,7 +43,7 @@
                     <option value="0">Hiện</option>
                     <option value="1">Ẩn</option>
                 </select>
-            </div>
+            </div> -->
 
             <div class=" card my-3 ">
                 <select class="form-control" name="cate_id" id="">
@@ -67,11 +67,11 @@
                 <a href="<?=CONTROLLERS_ADMIN?>?action=sua_atri&atri_id=<?=$id_attri?>&pro_id=<?=$_GET['id']?>" class="btn btn-dark">Sửa</a>
             </div>
             <?php endforeach;?>
-            <button class="btn btn-success add-properties" type="button">
+            <!-- <button class="btn btn-success add-properties" type="button">
                 Thêm thuộc tính mới
             </button>
             <input type="submit" name="them_sua_sp" value="Thêm thuộc tính" class="dang_nhap_dk btn btn-danger">
-            <br>
+            <br> -->
             
             <input type="submit" name="sua_sp" value="Sửa sản phẩm" class="dang_nhap_dk btn btn-danger mt-3">
         <?php endforeach; ?>

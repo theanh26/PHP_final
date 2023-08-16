@@ -19,14 +19,39 @@
         <p>Được thành lập với niềm đam mê về thời trang và sự sáng tạo, chúng tôi cam kết mang đến cho bạn những sản phẩm thời trang chất lượng cao, 
         đa dạng và đẹp mắt. Từ những bộ quần áo thời thượng, phụ kiện đa dạng đến những mẫu giày dép đẳng cấp, chúng tôi luôn cập nhật xu hướng mới
          nhất để bạn luôn tỏa sáng trong mọi dịp.</p>
+         <div class="img_main" style="margin-bottom: 20px">
+    <?php 
+    $imageDisplayed = false; 
 
+    foreach ($post->get_val('img_main') as $key => $val) {
+        if (!$imageDisplayed) {
+            extract($val);
+            echo '<img src="' . IMAGE . 'main1.jpeg" alt="" class="d-block image_banner" style="width:100%">';
+            $imageDisplayed = true; 
+        }
+    }
+    ?>
+</div>
         <h5 style="color: #c0392b">Tầm nhìn</h5>
 
-        <p>BBK mong muốn trở thành website cung cấp những sản phẩm thời trang uy tín, chất lượng và tốt nhất cho mọi đối tượng trên toàn quốc.</p>
+        <p>Betoni mong muốn trở thành website cung cấp những sản phẩm thời trang uy tín, chất lượng và tốt nhất cho mọi đối tượng trên toàn quốc.</p>
 
         <h5 style="color: #c0392b">Sứ mệnh</h5>
 
         <p>Tự tin thể hiện phong cách độc đáo - Chào đón thay đổi và sáng tạo không giới hạn!</p>
+        <div class="img_main" style="margin-bottom: 20px">
+    <?php 
+    $imageDisplayed = false; 
+
+    foreach ($post->get_val('img_main') as $key => $val) {
+        if (!$imageDisplayed) {
+            extract($val);
+            echo '<img src="' . IMAGE . 'main2.jpeg" alt="" class="d-block image_banner" style="width:100%">';
+            $imageDisplayed = true; 
+        }
+    }
+    ?>
+</div>
 
         <h5 style="color: #c0392b">Đội ngũ nhân viên</h5>
 

@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-6">
                     <p class="fs-5" style="font-size: 20px">
-                        <i class="fab fa-shopify"></i> <strong style="font-size: 22px"> Sản phẩm: <?= $title_pro ?></strong>
+                        <i class="fab fa-shopify"></i> <strong style="font-size: 22px"><?= $title_pro ?></strong>
                     </p>
                     <h5 class="card-title d-flex" style="margin-bottom: 1rem; font-size:18px">
                         <span >Mã sản phẩm: <?= $id_pro ?> </span>             

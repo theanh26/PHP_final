@@ -17,7 +17,7 @@
                       <i class="fas fa-table"></i>
                       <div class="nhap_input_login">
                           <select class="" name="cate" id="">
-                              <option value="0">Danh mục</option>
+                              <option value="0">Tất cả</option>
                               <?php foreach ($post->get_val('cates') as $val) : extract($val); ?>
                                   <option value="<?= $id_cate ?>"><?= $name_cate ?></option>
                               <?php endforeach; ?>
@@ -30,7 +30,7 @@
                       <div class="nhap_input_login">
                           <select class="" name="price" id="">
                               <option value="0-0">Giá sản phẩm</option>
-                              <option value="100000-300000">100000 - 3000000</option>
+                              <option value="100000-300000">100000 - 300000</option>
                               <option value="300000-500000">300000 - 500000</option>
                               <option value="500000">Lớn hơn 500000</option>
                           </select>
