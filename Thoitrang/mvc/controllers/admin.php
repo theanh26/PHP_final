@@ -22,12 +22,6 @@ if(isset($_GET['action'])){
         case "themsp":
             include_once "../views/admin/themsp.php";
         break;
-        // case "sua_atri":
-        //     include_once "../views/admin/suatri.php";
-        // break;
-        // case "thuoctinh_sp":
-        //     include_once "../views/admin/thuoctinh_sp.php";
-        // break;
         case "them_sl_sp":
             include_once "../views/admin/soluong_sp.php";
         break;
@@ -73,15 +67,6 @@ if(isset($_GET['action'])){
         case "dsalbum":
             include_once "../views/admin/album.php";
         break;
-        // case "danhsachnew":
-        //     include_once "../views/admin/new.php";
-        // break;
-        // case "them_new":
-        //     include_once "../views/admin/them_new.php";
-        // break;
-        // case "sua_new":
-        //     include_once "../views/admin/sua_new.php";
-        // break;
         default:
             include_once "../views/admin/main.php";
         break;

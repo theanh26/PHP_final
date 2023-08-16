@@ -27,7 +27,7 @@
             <div class="top_nav_tt ">
                 <div class="call__us login__us d-flex">
                     <span>
-                    <i class="fas fa-phone"></i> 0372163626
+                    <i class="fas fa-phone"></i> 0372 163 626
                     </span>
                     <div class='gach mx-3'></div>
                     <?php

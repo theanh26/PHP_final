@@ -99,7 +99,7 @@ if (isset($_POST['doi_tt'])) {
     }
     $error['one'] = "<script>alert('Bạn sửa thành công');</script>";
 }
-// doi mat khai
+// doi mat khau
 if (isset($_POST['doi_mk'])) {
     $email = $_POST['email'];
     $pass = $_POST['pass'];
@@ -215,36 +215,6 @@ if (isset($_POST['add_to_cart'])) {
     header("location:" . CONTROLLERS_USER . "?action=chitiet&id_chitiet=" . $id);
 }
 
-// // ------------------------------them vao gio hang o trang chu-----------------------------
-// if (isset($_POST['add_to_cart1'])) {
-//     $id = $_POST['id_chitiet1'];
-//     $save = $post->get_val_id('products', 'id_pro', $id);
-//     foreach ($post->get_val_id('products', 'id_pro', $id) as $val) {
-//         extract($val);
-//         $save_img = $image_pro;
-//         $save_title = $title_pro;
-//         $save_price = $price_pro;
-//         $save_quantity = $_POST['quantity'];
-//         $save_sale = $sale_pro;
-//     }
-//     if (!isset($_SESSION['cart_pro'][$id]) || !array_key_exists($id, $_SESSION['cart_pro'])) {
-//         $_SESSION['cart_pro'][$id] = array(
-//             'id_pro' => $id,
-//             'anh_pro' => $save_img,
-//             'title_pro' => $save_title,
-//             'price_pro' => $save_price,
-//             'quantity_pro' =>  $save_quantity,
-//             'sale_pro' => $save_sale
-//         );
-//     } else {
-//         $_SESSION['cart_pro'][$id]['quantity_pro'] += $save_quantity;
-//     }
-
-//     setcookie('error', "<script>alert('Bạn thêm hàng thành công');</script>", time() + 48000);
-//     header("location:" . CONTROLLERS_USER . $id);
-// }
-
-
 //-----------------------------checkbox chuyen hang---------------------------------
 if ($_GET['action'] == "dathang") {
 
@@ -253,9 +223,7 @@ if ($_GET['action'] == "dathang") {
         foreach ($_POST['number_cart'] as $key => $val) {
             foreach ($_POST['id_cart'] as $key2 => $val2) {
                 if ($key == $key2) {
-                    // echo $val;
-                    // echo '<br>';
-                    // echo $val2;
+                   
                     $mang[$val2] = $val;
                 }
             }
@@ -274,9 +242,7 @@ if ($_GET['action'] == "dathang") {
     //--------gửi dữ liệu check qua trang đặt hàng--------------
     if (isset($_POST['detal_check'])) {
         if (!empty($_POST['checkbox'])) {
-            //unset($_SESSION['dattrong']);
-            // var_dump($_POST['checkbox']);
-            // var_dump($_SESSION['cart_pro']);
+
             foreach ($_SESSION['cart_pro'] as $key => $val) {
                 extract($val);
                 foreach ($_POST['checkbox'] as $val2) {
