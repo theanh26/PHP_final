@@ -59,7 +59,7 @@ if (isset($_POST['sua_sp'])) {
     $quantity = $_POST['quantity'];
     $price = $_POST['price'];
     $sale = $_POST['sale'];
-  
+    $special = $_POST['special'];
     $cate_id = $_POST['cate_id'];
 
     if (empty($image)) {
