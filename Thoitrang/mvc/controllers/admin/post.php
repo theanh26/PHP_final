@@ -250,6 +250,7 @@ if (isset($_POST['delete_user'])) {
         setcookie('error', "<script>alert('Bạn xoá thành công');</script>", time() + 48000);
     }
 }
+
 if (isset($_POST['delete_pro'])) {
     $id_check = $_POST['checkbox'];
     foreach ($id_check as $val) {
@@ -285,6 +286,12 @@ if (isset($_POST['check_delete_new'])) {
     $id_check = $_POST['checkbox'];
     foreach ($id_check as $val) {
         $post->delete('news', 'id_news', $val);
+    }
+}
+if (isset($_POST['delete_info'])) {
+    $id_check = $_POST['checkbox'];
+    foreach ($id_check as $val) {
+        $post->delete('info', 'id_info', $val);
     }
 }
 

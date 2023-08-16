@@ -1,8 +1,5 @@
 <main>
     <h2 class="dash-title">Danh mục</h2>
-    <button class="btn them my-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#demothem" style="background-color: var(--main-color) !important">
-        Thêm danh mục
-    </button>
     <div class="table-responsive">
         <table class="table table-xuly ">
             <thead>
@@ -19,10 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php //var_dump($post->get_val('users'));
-                // if(isset($_POST['delete_user'])){
-                //     var_dump($_POST);
-                // }
+                <?php 
                 if (!empty($post->get_val('cates'))) {
                     foreach ($post->get_val('cates') as $val) : extract($val); ?>
                         <tr>

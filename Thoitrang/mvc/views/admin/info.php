@@ -48,13 +48,12 @@
                     <th>Logo</th>
                     <th>Phone</th>
                     <th>Địa chỉ</th>
-                    <th>Sửa</th>
                 </tr>
             </thead>
             <tbody>
                 <pre>
-                <?php
-               
+                   <?php
+            
                 if (!empty($post->get_val('info'))) {
                     foreach ($post->get_val('info') as $val) : extract($val); ?>
                         <tr>
@@ -64,7 +63,7 @@
                                 <td><img src="<?= IMAGE ?><?= $logo ?>" width="200px" height="100px" alt=""></td>
                                 <td><?= $phone_info ?></td>
                                 <td><?= $adress_info ?></td>
-                                <td><a href="<?= CONTROLLERS_ADMIN ?>?action=sua_info&id=<?= $id_info ?>" class="btn btn-warning">Sửa</a></td>
+                        
                         </tr>
                 <?php endforeach;
                 } ?>
@@ -72,7 +71,7 @@
 
         </table>
         <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_user" value="Xóa " id="checkall"></td>
+            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_info" value="Xóa " id="checkall"></td>
         </tr>
         </form>
     </div>

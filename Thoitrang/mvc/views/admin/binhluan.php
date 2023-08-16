@@ -5,14 +5,7 @@
         <table class="table table-xuly">
             <thead>
                 <tr>
-                    <th>
-                        <input type="checkbox" name="" id="checkall" hidden>
-                        <button class="btn btn-danger">
-                            <label for="checkall" class="select">Chọn tất</label>
-                            <label for="checkall" class="unselect" style="display: none;">Bỏ chọn</label>
-                        </button>
-                    </th>
-                    <th>id sản phẩm</th>
+                    <th>Id sản phẩm</th>
                     <th>Tên sản phẩm </th>
                     <th>Số bình luận</th>
                     <th>Bình luận cũ nhất</th>
@@ -27,7 +20,7 @@
                     foreach ($post->thongke_cm() as $val) : extract($val); ?>
                         <tr>
                             <form action="<?=GET?>?action=xoa_cm_admin" method="post">
-                                <td><input type="checkbox" name="checkbox[]" id="check" value="<?= $id_pro ?>"></td>
+                
                                 <td><?= $id_pro ?></td>
                                 <td><?= $ten_pro ?></td>
                                 <td><?= $so_cm ?></td>
@@ -38,11 +31,7 @@
                 <?php endforeach;
                 } ?>
             </tbody>
-
         </table>
-        <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_user" value="Xóa" id="checkall"></td>
-        </tr>
         </form>
     </div>
 </main>

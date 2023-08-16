@@ -120,7 +120,7 @@ class handle extends database
     }
     public function insert_info($email, $logo, $phone, $adress, $content)
     {
-        $sql = "INSERT INTO `info`(`email_info`, `logo`, `phone_info`, `adress_info`, `thongtin`) VALUES ('$email','$logo','$phone','$adress','$content')";
+        $sql = "INSERT INTO `info`(`email_info`, `logo`, `phone_info`, `adress_info`) VALUES ('$email','$logo','$phone','$adress')";
         $this->execute($sql);
     }
 

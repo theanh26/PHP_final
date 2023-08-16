@@ -4,7 +4,7 @@
         <table class="table table-xuly ">
             <thead>
                 <tr>
-                    <th class="image">Ảnh san sản phẩm</th>
+                    <th class="image">Ảnh sản phẩm</th>
                     <th>Tên sản phẩm</th>
                     <th>Price</th>
                     <th>Số lượng</th>
@@ -32,7 +32,7 @@
 
         </table>
         <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_love" value="xóa click" id="checkall"></td>
+            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_love" value="Xóa" id="checkall"></td>
         </tr>
         </form>
     </div>

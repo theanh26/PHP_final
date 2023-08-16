@@ -29,12 +29,6 @@ if(isset($_GET['action'])){
         case "contact":
             include_once "../views/user/contact.php";
         break;
-        // case "quenmk":
-        //     include_once "../views/user/quenmk.php";
-        // break;
-        // case "doimk_quen":
-        //     include_once "../views/user/doimk_quen.php";
-        // break;
         case "thongtin":
             include_once "../views/user/thongtin.php";
         break;
@@ -47,15 +41,12 @@ if(isset($_GET['action'])){
         case "gioithieu":
             include_once "../views/user/gioithieu.php";
         break;
-        // case "lichsu":
-        //     include_once "../views/user/lichsu.php";
-        // break;
-        // case "chitiet_ls":
-        //     include_once "../views/user/chitiet_ls.php";
-        // break;
-        // case "lichsu_sdt":
-        //     include_once "../views/user/lichsu_sdt.php";
-        // break;
+        case "lichsu":
+            include_once "../views/user/lichsu.php";
+        break;
+        case "chitiet_ls":
+            include_once "../views/user/chitiet_ls.php";
+        break;
         default:
             include_once "../views/user/home.php";
         break;

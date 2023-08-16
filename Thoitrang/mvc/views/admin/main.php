@@ -63,12 +63,12 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Tổng</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Địa chỉ</th>
-                                <th>Họ và tên</th>
-                                <th>Ngày đặt</th>
+                            <th>Họ và tên</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Địa chỉ</th>
+                            <th>Tổng tiền</th>
+                            <th>Ngày đặt</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,11 +76,11 @@
                             if (!empty($save_mon)) {
                                 foreach ($save_mon as $val) : extract($val); ?>
                                     <tr>
-                                        <td><?= number_format($total_order) ?></td>
+                                        <td><?= htmlspecialchars($name_order) ?></td>
                                         <td><?= $phone_order ?></td>
                                         <td><?= $email_order ?></td>
                                         <td><?= $adress_order ?></td>
-                                        <td><?= htmlspecialchars($name_order) ?></td>
+                                        <td><?= number_format($total_order) ?></td>
                                         <td>
                                             <span class="badge success"><?= $date_order ?></span>
                                         </td>

@@ -73,7 +73,9 @@
                             }
                             ?>
                             <li><a class="dropdown-item text-dark" href="<?= CONTROLLERS_USER ?>?action=thongtin">Thông tin tài khoản</a></li>
+                            <li><a class="dropdown-item text-dark" href="<?= CONTROLLERS_USER ?>?action=lichsu">Lịch sử mua hàng</a></li>
                             <li><a class="dropdown-item text-dark" href="../controllers/get.php?action=dangxuat">Đăng xuất</a></li>
+                           
                         </ul>
                     </div>
 
