@@ -3,8 +3,8 @@
 include_once "../models/function.php";
 include_once "../controllers/user/post.php";
 include_once "../views/user/nav-footer/nav.php";
-//moi lan click vao the a chay url thi gui action = ... ta lay may cai ... ay de phan biet cac trang bang cac include 
-// moi lan action thi chi giao luu voi chinh file user.php... tu user.php di chuyen duoc con cac file khac chuyen vao user.php thi khong
+//moi lan click vao chay url thi gui action ta lay may cai de phan biet cac trang bang cac include 
+// moi lan action thi chi giao luu voi chinh file user.php tu user.php di chuyen duoc con cac file khac chuyen vao user.php thi khong
  
 if(isset($_GET['action'])){
     switch($_GET['action']){

@@ -368,8 +368,7 @@ if (isset($_POST['loc'])) {
     $tongsp = count($save_dm);
 
     $mang = phantrang($tongsp, 4, $page);
-    // var_dump($mang);
-
+    
     $save_dm = $post->loc_sp($mang_gia[0], $mang_gia[1], $id_cate, '', $mang['start'], $mang['sp']);
 } else {
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -381,7 +380,7 @@ if (isset($_POST['loc'])) {
 
 if (isset($_POST['timkiem'])) {
     $save_dm = $post->loc_sp(0, 0, '', $_POST['search']);
-    // lay tong so san pham dc loc ten cho vao lam tong sp
+    // lay tong so san pham dc loc ten cho vao lam tong san pham
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
     $sp_dtb = $post->get_val('products');
     $tongsp = count($save_dm);

@@ -1,5 +1,4 @@
 <?php
-
 include_once "../models/function.php";
 //file get nay la file chuyen trang xu ly
 if (isset($_COOKIE['id_admin'])) {
@@ -89,17 +88,8 @@ if($_GET['action'] == 'like'){
 
 if($_GET['action'] == "sua_order"){
 
-    
-    // $save = $post->get_val_id('orders','id_order',$_GET['id']);
     $get_action = $_GET['role'];
-    // foreach($save as $val){
-    //     extract($val);
-    //     if($order == 1){
-    //         $post->gui_dh(0,$_GET['id']);
-    //     }else{
-    //         $post->gui_dh(1,$_GET['id']);
-    //     }
-    // }
+    
 
     if ($get_action < 1) {
         $post->gui_dh(0,$_GET['id']);
@@ -111,15 +101,11 @@ if($_GET['action'] == "sua_order"){
         $post->gui_dh(2,$_GET['id']);
     }
     if ($get_action > 2) {
-        // echo '<pre>';
         $sav_pro = $post->get_val('products');
         $save_order = $post->get_val_id_join('orders.id_order',$_GET['id'],'orders','order_detail','orders.id_order','order_detail.order_id');
-        // var_dump($save_order);
-        // var_dump($sav_pro);
         foreach($sav_pro as $val){extract($val);
             echo $quantity_pro.'<br>';
             foreach($save_order as $val2){
-                // extract($val2); k thich extract :))
                 if($id_pro == $val2['product_id']){
                     $quantity_pro += $val2['quantity_detail'];
                     $post->update_quantity($quantity_pro,$id_pro);

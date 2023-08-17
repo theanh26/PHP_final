@@ -364,5 +364,4 @@ function phantrang($tongsp, $sp, $page)
     return $mang;
 }
 
-//var_dump($post->loc_sp(0,0,null));
 ?>
