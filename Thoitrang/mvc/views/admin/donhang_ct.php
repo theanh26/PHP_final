@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                    
-                    <th>Tiêu đề</th>
+                    <th>Mã sản phẩm</th>
                     <th>Nội dung</th>
                     <th>Ảnh</th>
                     <th>Số lượng</th>

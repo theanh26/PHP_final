@@ -50,16 +50,13 @@
                     <th>Ảnh</th>
                    
                     <th>Sản phẩm</th>
-                    <th>Sửa</th>
+                   
                 </tr>
             </thead>
             <tbody>
                 <pre>
                 <?php 
-                //var_dump($post->get_val_join('products','cates','products.cate_id','cates.id_cate'));
-                // if(isset($_POST['delete_user'])){
-                //     var_dump($_POST);
-                // }
+                
                 if (!empty($post->get_val('banners'))) {
                     foreach ($post->get_val('banners') as $val) : extract($val); ?>
                         <tr>
@@ -69,7 +66,6 @@
                                 <td><img src="<?= IMAGE ?><?= $image_banner ?>" width="200px" height="100px" alt=""></td>
                                 <td><?= $id_product ?></td>
                              
-                                <td><a href="<?= CONTROLLERS_ADMIN ?>?action=sua_bn&id=<?= $id_banner ?>" class="btn btn-warning">Sửa</a></td>
                         </tr>
                 <?php endforeach;
                 } ?>

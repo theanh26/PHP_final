@@ -5,7 +5,7 @@
         <table class="table table-xuly">
             <thead>
                 <tr>
-                    <th>Id sản phẩm</th>
+                    <th>Mã sản phẩm</th>
                     <th>Tên sản phẩm </th>
                     <th>Số bình luận</th>
                     <th>Bình luận cũ nhất</th>

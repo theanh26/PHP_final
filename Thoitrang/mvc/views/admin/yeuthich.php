@@ -6,7 +6,7 @@
                 <tr>
                     <th class="image">Ảnh sản phẩm</th>
                     <th>Tên sản phẩm</th>
-                    <th>Price</th>
+                    <th>Giá gốc sản phẩm</th>
                     <th>Số lượng</th>
                     <th>Giảm giá</th>
                 </tr>
@@ -31,9 +31,6 @@
             </tbody>
 
         </table>
-        <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_love" value="Xóa" id="checkall"></td>
-        </tr>
         </form>
     </div>
 </main>

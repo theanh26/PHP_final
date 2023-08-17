@@ -14,7 +14,7 @@
                             <label for="checkall" class="unselect" style="display: none;">bỏ chọn</label>
                         </button>
                     </th>
-                    <th>Người bình</th>
+                    <th>Người bình luận</th>
                     <th>Nội dung bình luận </th>
                     <th>Ngày bình luận</th>
                 </tr>
