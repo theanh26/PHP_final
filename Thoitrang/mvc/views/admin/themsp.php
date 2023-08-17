@@ -19,15 +19,6 @@
         <div class="card my-3">
             <input class="form-control" type="number" name="quantity" placeholder="Nhập số lương">
         </div>
-
-        <!-- <div class="card my-3 d-flex flex-lg-row">
-            <input class="form-control" type="text" name="size" value="Trống thuộc tính" id="" disabled>
-            <a href="<?php //echo CONTROLLERS_ADMIN 
-                        ?>?action=thuoctinh_sp" class="bg-black px-3" style="display: flex; align-items: center;">
-                <span class="ti-arrow-right"></span>
-            </a>
-        </div> -->
-
         <div class="card my-3">
             <input class="form-control" type="number" name="price" placeholder="Nhập giá tiền">
         </div>
@@ -35,7 +26,12 @@
         <div class="card my-3">
             <input class="form-control" type="number" name="sale" placeholder="Nhập sale">
         </div>
-
+        <div class="card my-3">
+            <select class="form-control" name="special" id="">
+                <option value="0">Đặc biệt</option>
+                <option value="1">Không đặc biệt</option>
+            </select>
+        </div>
         <div class="card my-3">
             <select class="form-control" name="cate_id" id="">
                 <?php foreach ($post->get_val('cates') as $val) : extract($val) ?>

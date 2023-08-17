@@ -73,7 +73,7 @@
                       <li class="page-item"><a class="page-link" href="#">Trang cuối</a></li>
         </ul>
         <tr>
-            <td><input onclick="return confirm('bạn muốn xóa theo lua chon');" class="btn btn-danger" type="submit" name="delete_pro" value="Xóa" id="checkall"></td>
+            <td><input onclick="return confirm('bạn muốn xóa sản phẩm');" class="btn btn-danger" type="submit" name="delete_pro" value="Xóa" id="checkall"></td>
         </tr>
         </form>
     </div>
