@@ -64,7 +64,7 @@
                         <thead>
                             <tr>
                             <th>Họ và tên</th>
-                            <th>Phone</th>
+                            <th>Số điện thoại</th>
                             <th>Email</th>
                             <th>Địa chỉ</th>
                             <th>Tổng tiền</th>
