@@ -125,7 +125,7 @@
                         <?php if (!isset($id)) {
                         echo "Bạn cần đăng nhập để bình luận";
                         } ?></textarea>
-                        <input type="submit" name="submit_bl_main" class="btn btn-danger mt-3" value="gửi">
+                        <input type="submit" name="submit_bl_main" class="btn btn-danger mt-3" value="gửi" style="background-color: var(--input-thanh); border: none">
                     </form>
                 </div>
             </div>
@@ -252,7 +252,7 @@
                                             <div class="icon">
                                                 <ul class="d-flex">
                                                     <li><a href="<?= CONTROLLERS_USER ?>?action=like&id_like=<?= $id_pro ?>"><i class="far fa-heart"></i></a></li>
-                                                    <li><a href="<?= CONTROLLERS_USER ?>?action=add_to_cart&id_chitiet=<?= $id_pro ?>"><i class="fab fa-shopify"></i></a></li>   
+                                                  
                                             </div>
                                         </div>
                                     </div>

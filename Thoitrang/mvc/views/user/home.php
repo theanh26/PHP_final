@@ -60,7 +60,7 @@
                                             <div class="icon">
                                                 <ul class="d-flex">
                                                     <li><a href="<?= CONTROLLERS_USER ?>?action=like&id_like=<?= $id_pro ?>"><i class="far fa-heart"></i></a></li>
-                                                    <li><a href="<?= CONTROLLERS_USER ?>?action=add_to_cart&id_chitiet=<?= $id_pro ?>"><i class="fab fa-shopify"></i></a></li>   
+                                                    
                                             </div>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@
                                 <div class="icon">
                                     <ul class="d-flex">
                                         <li><a href="<?= CONTROLLERS_USER ?>?action=like&id_like=<?= $id_pro ?>"><i class="far fa-heart"></i></a></li>
-                                        <li><a href="<?= CONTROLLERS_USER ?>?action=card&add_to_cart=<?= $id_pro ?>"><i class="fab fa-shopify"></i></a></li>
+                                      
                                         
                                 </div>
                             </div>

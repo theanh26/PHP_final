@@ -57,7 +57,6 @@
                                           <div class="icon">
                                               <ul class="d-flex">
                                                   <li><a href="<?= CONTROLLERS_USER ?>?action=like&id_like=<?= $id_pro ?>"><i class="far fa-heart"></i></a></li>
-                                                  <li><a href=""><i class="fab fa-shopify"></i></a></li>
                                               </ul>
                                           </div>
                                       </div>
