@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 17, 2023 lúc 08:45 AM
+-- Thời gian đã tạo: Th10 18, 2023 lúc 09:26 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -122,10 +122,14 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`id_cm`, `content_cm`, `product_id`, `user_id`, `date`, `parent_cm`, `hiden_cm`) VALUES
 (48, '123', 4, 2, '2023-08-05 23:40:19', 0, 0),
-(49, ' ao dep the                       ', 1, 5, '2023-08-15 18:51:37', 0, 0),
-(51, 'ao dep', 2, 5, '2023-08-15 23:51:48', 0, 0),
-(53, 'dep', 2, 5, '2023-08-15 23:53:03', 51, 0),
-(54, '123', 1, 2, '2023-08-15 23:55:04', 49, 0);
+(57, 'Tin juan chua anh?', 3, 5, '2023-08-18 10:34:25', 0, 0),
+(58, 'Bạn Chỉnh ơi!', 3, 2, '2023-08-18 10:34:55', 57, 0),
+(60, 'Quần 5 chục bán không?', 2, 5, '2023-08-18 10:38:30', 0, 0),
+(61, 'Bạn viết tâm thư lên Liên hợp quốc nhé. Chắc là họ lắng nghe bạn đấy.', 2, 2, '2023-08-18 10:39:17', 60, 0),
+(62, '5 chục thì lên chợ rồng mua đi má :)', 2, 4, '2023-08-18 10:40:54', 60, 0),
+(63, 'Mason Mount to Manchester United: HERE WE GO', 1, 5, '2023-08-18 10:52:21', 0, 0),
+(64, 'Tin juan chua anh?', 1, 2, '2023-08-18 10:52:57', 63, 0),
+(65, '4 tiếng trước là như thế nhưng bây giờ thì khác rồi', 1, 5, '2023-08-18 10:53:41', 63, 0);
 
 -- --------------------------------------------------------
 
@@ -145,7 +149,9 @@ CREATE TABLE `history` (
 
 INSERT INTO `history` (`id_histrory`, `id_user`, `id_order`) VALUES
 (15, 5, 51),
-(16, 5, 52);
+(16, 5, 52),
+(17, 4, 53),
+(18, 5, 54);
 
 -- --------------------------------------------------------
 
@@ -204,11 +210,11 @@ CREATE TABLE `loves` (
 --
 
 INSERT INTO `loves` (`id_love`, `pro_id`, `user_id`) VALUES
-(3, 1, 2),
 (4, 7, 2),
 (5, 2, 2),
 (20, 4, 2),
-(25, 6, 4);
+(25, 6, 4),
+(33, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -237,8 +243,10 @@ INSERT INTO `orders` (`id_order`, `total_order`, `phone_order`, `email_order`, `
 (2, 2700000, 987654322, 'ngocmai123@gmail.com', 'Hà Nội', 'Đinh Thị Mai', 'giao giờ hành chính', '2023-08-07 16:55:01', 2),
 (3, 1440000, 987654321, 'theanh123@gmail.com', 'Hà Nội', 'Lương Thế Anh', 'solo yasuo thắng thì không mất tiền hàng', '2023-07-30 16:35:26', 2),
 (4, 300000, 372163626, 'theanhnb02@gmail.com', 'Hà Nội', 'Lương Thế Anh', 'goku bản năng vô cực mạnh hơn thần hủy diệt', '2023-07-29 16:33:49', 2),
-(51, 2115000, 233444555, 'phungthanh123@gmail.com', 'Mộ Lao, Hà Đông, Hà Nội', 'Nguyễn Phùng Thành', 'không cần giao', '2023-08-16 18:18:12', 0),
-(52, 1608000, 233444556, 'phungthanh123@gmail.com', 'Mộ Lao, Hà Đông, Hà Nội', 'Nguyễn Phùng Thành', 'combo azir mù mắt', '2023-08-17 02:17:56', 0);
+(51, 2115000, 233444555, 'phungthanh123@gmail.com', 'Mộ Lao, Hà Đông, Hà Nội', 'Nguyễn Phùng Thành', 'không cần giao', '2023-08-16 18:18:12', 1),
+(52, 1608000, 233444556, 'phungthanh123@gmail.com', 'Mộ Lao, Hà Đông, Hà Nội', 'Nguyễn Phùng Thành', 'combo azir mù mắt', '2023-08-17 02:17:56', 0),
+(53, 340000, 355222666, 'ngocmeii@gmail.com', 'Dịch Vọng Hậu, Cầu Giấy, Hà Nội', 'Đinh Thị Mai', 'giao hàng đến 63 tỉnh thành', '2023-08-18 11:56:46', 2),
+(54, 340000, 233444556, 'phungthanh123@gmail.com', 'Mộ Lao, Hà Đông, Hà Nội', 'Nguyễn Phùng Thành', 'giao đến', '2023-08-18 14:19:36', 1);
 
 -- --------------------------------------------------------
 
@@ -267,7 +275,9 @@ INSERT INTO `order_detail` (`id_detail`, `quantity_detail`, `order_id`, `product
 (74, 2, 51, 2),
 (75, 1, 51, 4),
 (76, 3, 52, 3),
-(77, 2, 52, 7);
+(77, 2, 52, 7),
+(78, 1, 53, 1),
+(79, 1, 54, 1);
 
 -- --------------------------------------------------------
 
@@ -296,13 +306,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_pro`, `title_pro`, `content_pro`, `thongtin`, `image_pro`, `quantity_pro`, `price_pro`, `sale_pro`, `date_pro`, `special_pro`, `view_pro`, `hiden_pro`, `cate_id`) VALUES
-(1, 'B-LA PoLo | Áo xám vai trắng', '<ul><li>- Chất vải: cotton 100% 4 chiều</li><li>- Kiểu dáng thể thao,năng động</li><li>- Giặt không đổ lông hay bay màu, thấm hút mồ hôi và thoải mái không gò bó khi vận động</li><li>- Form áo rộng vừa, tôn dáng.</li><li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'ao1.jpeg', 281, 400000, 15, '2023-08-08 00:00:00', 0, 107, 0, 1),
-(2, 'Black Jeans | Quần Đen', '<ul>\r\n<li>- Màu sắc: Xám</li>\r\n<li>- Kiểu dáng: Quần trơn, cúc chữ</li>\r\n<li>- Chất liệu jean co giãn thoải mái</li>\r\n<li>- Form quần tôn dáng</li>\r\n<li>- Giặt không đổ lông hay bay màu, giãn form</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'quan1.jpeg', 333, 700000, 10, '2023-08-08 00:00:00', 0, 39, 0, 2),
-(3, 'Áo Band Tee | Trắng be', '<ul>\r\n<li>- Chất vải: cotton 100% 4 chiều</li>\r\n<li>- Kiểu dáng thể thao,năng động</li>\r\n<li>- Giặt không đổ lông hay bay màu, thấm hút mồ hôi và thoải mái không gò bó khi vận động</li>\r\n<li>- Form áo rộng vừa, tôn dáng.</li>\r\n<li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'ao3.jpeg', 125, 280000, 5, '2023-08-08 00:00:00', 0, 75, 0, 1),
+(1, 'B-LA PoLo | Áo xám vai trắng', '<ul><li>- Chất vải: cotton 100% 4 chiều</li><li>- Kiểu dáng thể thao,năng động</li><li>- Giặt không đổ lông hay bay màu, thấm hút mồ hôi và thoải mái không gò bó khi vận động</li><li>- Form áo rộng vừa, tôn dáng.</li><li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li></ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'ao1.jpeg', 280, 400000, 15, '2023-08-08 00:00:00', 0, 124, 0, 1),
+(2, 'Black Jeans | Quần Đen', '<ul>\r\n<li>- Màu sắc: Xám</li>\r\n<li>- Kiểu dáng: Quần trơn, cúc chữ</li>\r\n<li>- Chất liệu jean co giãn thoải mái</li>\r\n<li>- Form quần tôn dáng</li>\r\n<li>- Giặt không đổ lông hay bay màu, giãn form</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'quan1.jpeg', 333, 700000, 10, '2023-08-08 00:00:00', 0, 46, 0, 2),
+(3, 'Áo Band Tee | Trắng be', '<ul>\r\n<li>- Chất vải: cotton 100% 4 chiều</li>\r\n<li>- Kiểu dáng thể thao,năng động</li>\r\n<li>- Giặt không đổ lông hay bay màu, thấm hút mồ hôi và thoải mái không gò bó khi vận động</li>\r\n<li>- Form áo rộng vừa, tôn dáng.</li>\r\n<li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'ao3.jpeg', 125, 280000, 5, '2023-08-08 00:00:00', 0, 79, 0, 1),
 (4, 'Lusso Slip-on | Giày FS', '<ul>\r\n<li>- Màu sắc: Đen</li>\r\n<li>- Thân giày có đai da sang trọng</li>\r\n<li>- Chất liệu da thật mềm</li>\r\n<li>- Đế giày được làm từ cao su non cao cấp siêu nhẹ và êm ái</li>\r\n<li>- Lót gồm 2 lớp, với lớp trên là da thật, lớp dưới là cao su êm ái thấm hút mồ hôi</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'giay1.jpeg', 300, 950000, 10, '2023-08-08 00:00:00', 0, 45, 0, 3),
 (5, 'Loading Tee | Áo Trắng', '<ul>\r\n<li>- Chất vải: cotton 100% 4 chiều</li>\r\n<li>- Kiểu dáng thể thao,năng động</li>\r\n<li>- Giặt không đổ lông hay bay màu, thấm hút mồ hôi và thoải mái không gò bó khi vận động</li>\r\n<li>- Form áo rộng vừa, tôn dáng.</li>\r\n<li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'ao4.jpeg', 113, 280000, 5, '2023-08-08 00:00:00', 0, 162, 0, 1),
-(6, 'Navy Jeans | Quần Xanh dương', '<ul>\r\n<li>- Màu sắc: Xanh đậm </li>\r\n<li>- Chất liệu jean co giãn thoải mái.</li>\r\n<li>- Form quần tôn dáng.</li>\r\n<li>- Giặt không đổ lông hay bay màu, giãn form</li>\r\n<li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'quan2.jpeg', 279, 470000, 5, '2023-08-08 00:00:00', 0, 36, 0, 2),
-(7, 'O-LA Polo | Áo Trắng', '<ul>\r\n<li>- Chất vải: cotton 100% 4 chiều</li>\r\n<li>- Kiểu dáng thể thao,năng động</li>\r\n<li>- Giặt không đổ lông hay bay màu, thấm hút mồ hôi và thoải mái không gò bó khi vận động</li>\r\n<li>- Form áo rộng vừa, tôn dáng.</li>\r\n<li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'ao2.jpeg', 228, 450000, 10, '2023-08-08 00:00:00', 0, 36, 0, 1),
+(6, 'Navy Jeans | Quần Xanh dương', '<ul>\r\n<li>- Màu sắc: Xanh đậm </li>\r\n<li>- Chất liệu jean co giãn thoải mái.</li>\r\n<li>- Form quần tôn dáng.</li>\r\n<li>- Giặt không đổ lông hay bay màu, giãn form</li>\r\n<li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'quan2.jpeg', 279, 470000, 5, '2023-08-08 00:00:00', 0, 37, 0, 2),
+(7, 'O-LA Polo | Áo Trắng', '<ul>\r\n<li>- Chất vải: cotton 100% 4 chiều</li>\r\n<li>- Kiểu dáng thể thao,năng động</li>\r\n<li>- Giặt không đổ lông hay bay màu, thấm hút mồ hôi và thoải mái không gò bó khi vận động</li>\r\n<li>- Form áo rộng vừa, tôn dáng.</li>\r\n<li>- Chất vải tạo cảm giác thoáng mát cho người mặc</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'ao2.jpeg', 228, 450000, 10, '2023-08-08 00:00:00', 0, 37, 0, 1),
 (8, 'Shred Short | Quần Đen', '<ul>\r\n<li>-Màu sắc: Đen</li>\r\n<li>-Họa tiết: Rách đỏ trắng</li>\r\n<li>-Chất liệu jean co giãn thoải mái</li>\r\n<li>-Phom quần tôn dáng.</li>\r\n<li>-Giặt không đổ lông hay bay màu, giãn phom</li>\r\n</ul>', 'Sản phẩm được kiểm tra kĩ càng, cẩn thận và tư vấn nhiệt tình trước khi gói hàng giao cho Quý Khách , Hàng có sẵn, giao hàng ngay khi nhận được đơn  , Hỗ trợ đổi trả theo quy định của Shopee', 'quan3.jpeg', 997, 520000, 20, '2023-08-08 00:00:00', 1, 53, 0, 2),
 (9, ' Mosaic Moccasin | Giày FSI', '<ul>\r\n<li>- Màu sắc: Đen</li>\r\n<li>- Thân giày có đai da sang trọng </li>\r\n<li>- Thân giày có vân da cá sấu sang trọng</li>\r\n<li>- Đế giày được làm từ cao su non cao cấp siêu nhẹ và êm ái</li>\r\n<li>- Lót gồm 2 lớp, với lớp trên là da thật, lớp dưới là cao su êm ái thấm hút mồ hôi</li>\r\n</ul>\r\n', '1', 'giay2.jpeg', 53, 900000, 20, '2023-08-08 00:00:00', 0, 132, 0, 3);
 
@@ -331,7 +341,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `email`, `phone`, `name`, `adress`, `pass`, `avatar`, `role`, `look`) VALUES
 (2, 'theanhnb02@gmail.com', 372163626, 'Lương Thế Anh', 'Mai Dịch, Cầu Giấy, Hà Nội', '123', 'anhdaidien2.jpg', 1, 0),
 (4, 'ngocmeii@gmail.com', 355222666, 'Đinh Thị Mai', 'Dịch Vọng Hậu, Cầu Giấy, Hà Nội', '123', 'anhdaidien4.jpg', 0, 0),
-(5, 'phungthanh123@gmail.com', 233444556, 'Nguyễn Phùng Thành', 'Mộ Lao, Hà Đông, Hà Nội', '123', 'anhdaidien2.jpg', 0, 0);
+(5, 'phungthanh123@gmail.com', 233444556, 'Nguyễn Phùng Thành', 'Mộ Lao, Hà Đông, Hà Nội', '123', 'anhdaidien2.jpg', 0, 0),
+(43, 'theanh123@gmail.com', 828112610, 'Lương Thế Anh', 'Hà Nội', '1234', 'anhdaidien2.jpg', 0, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -433,19 +444,19 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT cho bảng `cates`
 --
 ALTER TABLE `cates`
-  MODIFY `id_cate` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_cate` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id_cm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_cm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT cho bảng `history`
 --
 ALTER TABLE `history`
-  MODIFY `id_histrory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_histrory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `info`
@@ -457,31 +468,31 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT cho bảng `loves`
 --
 ALTER TABLE `loves`
-  MODIFY `id_love` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_love` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
