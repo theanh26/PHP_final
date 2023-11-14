@@ -5,8 +5,8 @@
     </ul>
     <h2 class="dash-title mt-3">Chi tiết sản đơn hàng</h2>
     <div class="table-responsive">
-        <table class="table table-xuly ">
-            <thead>
+        <table class="table ">
+            <thead class="thead-dark">
                 <tr>
                     <th>
                         <input type="checkbox" name="" id="checkall" hidden>
@@ -21,10 +21,8 @@
                     <th>Số lượng</th>
                     <th>Giá</th>
                     <th>Sale</th>
-                    <th>Ngày thêm</th>
-                    <th>Đặc biệt</th>
-                    <th>View</th>
-                    <th>Chi tiết</th>
+                    <th>Ngày mua</th>
+                    <th>Chi tiết sản phẩm</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,8 +40,6 @@
                                 <td><?= $price_pro ?></td>
                                 <td><?= $sale_pro ?></td>
                                 <td><?= $date_pro ?></td>
-                                <td><?php echo $special_pro = $special_pro < 1 ? "Đặc biệt" : "Không đặc biệt"; ?></td>
-                                <td><?= $view_pro ?></td>
                                 <td><a href="<?= GET ?>?id_chitiet=<?= $id_pro ?>" class="btn btn-warning">Chi tiết</a></td>
                         </tr>
                 <?php endforeach;
